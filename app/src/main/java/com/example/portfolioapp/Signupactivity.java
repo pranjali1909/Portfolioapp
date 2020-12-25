@@ -16,7 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Signupactivity extends AppCompatActivity {
+public class Signupactivity<Updated> extends AppCompatActivity {
     private EditText emailid;
     private EditText password;
     private Button signup;
@@ -65,6 +65,8 @@ auth.createUserWithEmailAndPassword(emailid,password).addOnCompleteListener(new 
     public void onComplete(@NonNull Task<AuthResult> task) {
         if(task.isSuccessful()){
             Toast.makeText(Signupactivity.this,"Thank you "+Name+", you are  succesfully registered",Toast.LENGTH_SHORT).show();
+            Toast.makeText(Signupactivity.this,"User succesfully registered",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
         }
         else{
             Toast.makeText(Signupactivity.this,"sorry "+Name+", try again",Toast.LENGTH_SHORT).show();

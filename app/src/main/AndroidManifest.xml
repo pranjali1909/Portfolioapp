@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PortfolioApp">
-        <activity android:name=".Signupactivity"></activity>
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".Signupactivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Startactivity">
             <intent-filter>
