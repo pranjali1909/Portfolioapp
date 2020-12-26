@@ -40,11 +40,8 @@ private FirebaseAuth fAuth;
 
                 String txt_password=password.getText().toString();
 
-                if(TextUtils.isEmpty(txt_emailid) || TextUtils.isEmpty(txt_password)){
-                    Toast.makeText(LoginActivity.this,"Empty credentials",Toast.LENGTH_SHORT).show();
-                }
-                else if(txt_password.length()<6){
-                    Toast.makeText(LoginActivity.this,"password too short",Toast.LENGTH_SHORT).show();
+                if(TextUtils.isEmpty(txt_emailid) || TextUtils.isEmpty(txt_password)) {
+                    Toast.makeText(LoginActivity.this, "Empty credentials", Toast.LENGTH_SHORT).show();
                 }
 
                 fAuth.signInWithEmailAndPassword(txt_emailid,txt_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -55,7 +52,7 @@ private FirebaseAuth fAuth;
                             startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                         }
                         else{
-                            Toast.makeText(LoginActivity.this,"Sorry try again",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"Wrong password or username",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
