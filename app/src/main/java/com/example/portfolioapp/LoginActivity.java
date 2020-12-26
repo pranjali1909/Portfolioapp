@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
 private EditText emailid;
 private EditText password;
+private TextView Signup;
 private Button login;
 private FirebaseAuth fAuth;
 
@@ -31,6 +33,7 @@ private FirebaseAuth fAuth;
         password=findViewById(R.id.password);
         fAuth=FirebaseAuth.getInstance();
         login=findViewById(R.id.login);
+        Signup = findViewById(R.id.Signup);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +60,13 @@ private FirebaseAuth fAuth;
                     }
                 });
 
+            }
+        });
+
+        Signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Signupactivity.class));
             }
         });
     }
